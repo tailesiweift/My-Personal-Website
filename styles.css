@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    text-align:center;
+    line-height: 1.5;
+}
+
+@media (max-width: 37.5em){
+    #hero{
+        padding:0rem 1.6rem;
+    }
+
+    .hero-title{
+        font-size: 3.5rem;;
+        line-height: 1.5;
+    }
+    .container{
+        max-width: 540px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 56.25em){
+    #hero{
+        justify-content: center;
+    } 
+}
+
+.hero-title{
+    font-weight:700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+}
+
+.container{
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+section{
+    border: none;
+}
+
+#hero{
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    font-weight: 400;
+    color: #272341;
+    padding: 0rem 5.6rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    line-height: 1.2;
+    animation: hidden 1s linear forwards;
+  }
+.my-name{
+    background-image: none;
+    color: #023e8a;
+}
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
+    .my-name,
+    .cta-btn--hero{
+      background-image: linear-gradient(135deg, #ade8f4 0%, #023e8a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    
+  }
+
+  .hero-cta{
+    display: flex;
+  }
+
+p, a{
+    font-size: 1.6rem ;
+}
+
+/* Button styles */
+.cta-btn, .cta-btn--hero {
+  position: relative;
+  display: inline-block;
+  /* Add padding to give the button some size and to position the text */
+  padding: 10px 20px;
+  /* This is to ensure that the link takes up space and can be interacted with */
+  text-decoration: none;
+  color: inherit; /* Inherit the text color from the parent */
+  overflow: hidden; /* This will contain the ::after element within the button */
+}
+
+/* Pseudo-element styles */
+.cta-btn:hover, .cta-btn--hero:hover {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0; /* Start with a width of 0 */
+  height: 100%; /* Make it as tall as the button */
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(135deg, #ade8f4 0%, #023e8a 100%);
+  z-index: -1;
+  transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1); /* Animate the width */
+}
+
+/* Hover effect */
+.cta-btn:hover, .cta-btn--hero:hover{
+  width: 100%; /* Full width on hover */
+}
+
+  
+  
+  
